@@ -1,0 +1,103 @@
+- https://www.datacamp.com/tutorial/how-to-train-a-llm-with-pytorch
+- https://www.youtube.com/watch?v=KEv-F5UkhxU
+- https://github.com/facebookresearch/llama
+- https://huggingface.co/meta-llama
+- https://llama.meta.com/
+- https://huggingface.co/tiiuae/falcon-7b
+- https://huggingface.co/tiiuae/falcon-7b-instruct
+- https://huggingface.co/google-t5
+- https://huggingface.co/docs/transformers/en/model_doc/t5
+- https://huggingface.co/cerebras/Cerebras-GPT-13B
+- https://huggingface.co/mistralai
+- https://arxiv.org/abs/2106.09685
+- https://sebastianraschka.com/blog/2023/llm-finetuning-lora.html
+- https://towardsdatascience.com/understanding-lora-low-rank-adaptation-for-finetuning-large-models-936bce1a07c6
+- https://www.datacamp.com/tutorial/mastering-low-rank-adaptation-lora-enhancing-large-language-models-for-efficient-adaptation
+- https://www.youtube.com/watch?v=KEv-F5UkhxU
+- https://www.youtube.com/watch?v=dA-NhCtrrVE&t=922s
+- https://huggingface.co/blog/4bit-transformers-bitsandbytes
+- https://arxiv.org/abs/2305.14314
+- https://openreview.net/pdf?id=OUIFPHEgJU
+- https://towardsdatascience.com/qlora-how-to-fine-tune-an-llm-on-a-single-gpu-4e44d6b5be32
+- https://typer.tiangolo.com/
+- https://www.reddit.com/r/LocalLLaMA/comments/17eo5mo/noob_i_try_to_finetune_a_lora_with_a_very_small/
+- https://medium.com/@srishtinagu19/fine-tuning-falcon-7b-instruct-using-peft-lora-on-free-gpu-6fa1b0fcbcb
+- https://dassum.medium.com/fine-tune-large-language-model-llm-on-a-custom-dataset-with-qlora-fb60abdeba07
+- https://medium.com/@amodwrites/a-definitive-guide-to-qlora-fine-tuning-falcon-7b-with-peft-78f500a1f337
+- https://medium.com/@rohit.pegallapati/fine-tune-falcon-7b-instruct-model-on-single-commodity-gpu-cf65a86c043a
+- https://lightning.ai/lightning-ai/studios/code-lora-from-scratch
+- https://www.youtube.com/watch?v=Us5ZFp16PaU
+- https://www.youtube.com/watch?v=iYr1xZn26R8
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
