@@ -1,0 +1,41 @@
+Wed Apr 24 03:20:35 PM IDT 2024
+
+SLURM_JOBID:		 701
+SLURM_JOB_NODELIST:	 HPC-RTX2080-X8 
+
+
+Job lidorel_JOB_ID:701_NODE:HPC-RTX2080-X8 Finished
+
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.70s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.14s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.22s/it]
+Setting `pad_token_id` to `eos_token_id`:11 for open-end generation.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---  The following table shows average data from 5 simulations. Analyze the data to determine which file suggests the most efficient and reliable protocol based on the simulation results. Explain your reasoning considering all relevant factors from the data provided.      ---
+---                                                                                                                                                                                                                                                                              ---
+---           duration     amount_sent  average_bandwidth                                                                                                                                                                                                                        ---
+---  0  1146933333.830 58666666696.500             68.826                                                                                                                                                                                                                        ---
+---  1   917546667.176 58666666699.400             75.890                                                                                                                                                                                                                        ---
+---  2 15469226668.864 58666666675.000              4.225                                                                                                                                                                                                                        ---
+---  3   586666667.000 58666666700.000            100.000                                                                                                                                                                                                                        ---
+---  4   586666667.000 58666666700.000            100.000                                                                                                                                                                                                                        ---
+---                                                                                                                                                                                                                                                                              ---
+---   provide the file index                                                                                                                                                                                                                                                     ---
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------
+---  Based on the simulation results, the file index that suggests the most efficient                                 ---
+---  and reliable protocol is 3. This is because it has the lowest duration and the                                   ---
+---  highest amount_sent, as well as the highest average_bandwidth. These factors are important to consider when      ---
+---  determining the most efficient protocol.                                                                         ---
+-------------------------------------------------------------------------------------------------------------------------
+
+filenames = [
+    "/home/lidorel/lora-tests/dataset_organized/s_0_cj_1_0_cf_rs_2_BLOOM_P1/flow_info_ecmp.csv",
+    "/home/lidorel/lora-tests/dataset_organized/s_0_cj_1_0_cf_rs_2_BLOOM_P1/flow_info_simulated_annealing.csv",
+    "/home/lidorel/lora-tests/dataset_organized/s_0_cj_1_0_cf_rs_2_BLOOM_P1/flow_info_edge_coloring.csv",
+    "/home/lidorel/lora-tests/dataset_organized/s_0_cj_1_0_cf_rs_2_BLOOM_P1/flow_info_ilp_solver.csv",
+    "/home/lidorel/lora-tests/dataset_organized/s_0_cj_1_0_cf_rs_2_BLOOM_P1/flow_info_mcvlc.csv"
+]

@@ -28,8 +28,8 @@
 - https://lightning.ai/lightning-ai/studios/code-lora-from-scratch
 - https://www.youtube.com/watch?v=Us5ZFp16PaU
 - https://www.youtube.com/watch?v=iYr1xZn26R8
-- 
-- 
+- https://huggingface.co/docs/trl/en/sft_trainer
+- https://huggingface.co/docs/transformers/en/main_classes/trainer
 - 
 - 
 - 
