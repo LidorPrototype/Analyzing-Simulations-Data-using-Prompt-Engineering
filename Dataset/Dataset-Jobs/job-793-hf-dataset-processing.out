@@ -1,0 +1,141 @@
+Tue Apr 30 07:55:59 PM IDT 2024
+
+SLURM_JOBID:		 793
+SLURM_JOB_NODELIST:	 HPC-RTX2080-X8 
+
+
+Job lidorel_JOB_ID:793_NODE:HPC-RTX2080-X8 Finished
+
+Start...
+
+Saving the dataset (0/1 shards):   0%|          | 0/10 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 10/10 [00:00<00:00, 797.27 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 10/10 [00:00<00:00, 774.69 examples/s]
+Input:                      filename        duration   amount_sent average_bandwidth
+               flow_info_ecmp   1146933333.83 58666666696.5 68.82575757583388
+         flow_info_ilp_solver     586666667.0 58666666700.0             100.0
+      flow_info_edge_coloring 15469226668.864 58666666675.0             4.225
+              flow_info_mcvlc     586666667.0 58666666700.0             100.0
+flow_info_simulated_annealing   917546667.176 58666666699.4  75.8899999990233
+Output:                      filename        duration   amount_sent average_bandwidth order
+               flow_info_ecmp   1146933333.83 58666666696.5 68.82575757583388   4.0
+         flow_info_ilp_solver     586666667.0 58666666700.0             100.0   1.0
+      flow_info_edge_coloring 15469226668.864 58666666675.0             4.225   5.0
+              flow_info_mcvlc     586666667.0 58666666700.0             100.0   2.0
+flow_info_simulated_annealing   917546667.176 58666666699.4  75.8899999990233   3.0
+------------------------------
+Input:                      filename       duration   amount_sent average_bandwidth
+               flow_info_ecmp 1163360000.506 58666666696.5 67.42575757583388
+         flow_info_ilp_solver    586666667.0 58666666700.0             100.0
+      flow_info_edge_coloring 15769600002.24 58666666675.0             4.125
+              flow_info_mcvlc    586666667.0 58666666700.0             100.0
+flow_info_simulated_annealing  924586667.172 58666666699.4 75.39999999931818
+Output:                      filename       duration   amount_sent average_bandwidth order
+               flow_info_ecmp 1163360000.506 58666666696.5 67.42575757583388   4.0
+         flow_info_ilp_solver    586666667.0 58666666700.0             100.0   1.0
+      flow_info_edge_coloring 15769600002.24 58666666675.0             4.125   5.0
+              flow_info_mcvlc    586666667.0 58666666700.0             100.0   2.0
+flow_info_simulated_annealing  924586667.172 58666666699.4 75.39999999931818   3.0
+------------------------------
+Input:                      filename           duration       amount_sent  average_bandwidth
+               flow_info_ecmp     1314358974.875 58666666694.71154 62.092074592147966
+         flow_info_ilp_solver        586666667.0     58666666700.0              100.0
+      flow_info_edge_coloring 15885128207.384615     58666666675.0  4.086538461538462
+              flow_info_mcvlc        586666667.0     58666666700.0              100.0
+flow_info_simulated_annealing 1100000000.5769231 58666666698.55769  67.93269230735632
+Output:                      filename           duration       amount_sent  average_bandwidth order
+               flow_info_ecmp     1314358974.875 58666666694.71154 62.092074592147966   4.0
+         flow_info_ilp_solver        586666667.0     58666666700.0              100.0   1.0
+      flow_info_edge_coloring 15885128207.384615     58666666675.0  4.086538461538462   5.0
+              flow_info_mcvlc        586666667.0     58666666700.0              100.0   2.0
+flow_info_simulated_annealing 1100000000.5769231 58666666698.55769  67.93269230735632   3.0
+------------------------------
+Input:                      filename      duration   amount_sent average_bandwidth
+      flow_info_edge_coloring 14000000000.0 43750000000.0             3.125
+               flow_info_ecmp   840437500.0 43750000000.0             65.97
+         flow_info_ilp_solver   437500000.0 43750000000.0             100.0
+flow_info_simulated_annealing   710500000.0 43750000000.0              73.0
+              flow_info_mcvlc   437500000.0 43750000000.0             100.0
+Output:                      filename      duration   amount_sent average_bandwidth order
+      flow_info_edge_coloring 14000000000.0 43750000000.0             3.125   4.0
+               flow_info_ecmp   840437500.0 43750000000.0             65.97   3.0
+         flow_info_ilp_solver   437500000.0 43750000000.0             100.0   1.0
+flow_info_simulated_annealing   710500000.0 43750000000.0              73.0   3.0
+              flow_info_mcvlc   437500000.0 43750000000.0             100.0   2.0
+------------------------------
+Input:                      filename      duration   amount_sent average_bandwidth
+      flow_info_edge_coloring 14000000000.0 43750000000.0             3.125
+               flow_info_ecmp   846562500.0 43750000000.0             65.76
+         flow_info_ilp_solver   437500000.0 43750000000.0             100.0
+flow_info_simulated_annealing   728000000.0 43750000000.0              72.0
+              flow_info_mcvlc   437500000.0 43750000000.0             100.0
+Output:                      filename      duration   amount_sent average_bandwidth order
+      flow_info_edge_coloring 14000000000.0 43750000000.0             3.125   4.0
+               flow_info_ecmp   846562500.0 43750000000.0             65.76   3.0
+         flow_info_ilp_solver   437500000.0 43750000000.0             100.0   1.0
+flow_info_simulated_annealing   728000000.0 43750000000.0              72.0   3.0
+              flow_info_mcvlc   437500000.0 43750000000.0             100.0   2.0
+------------------------------
+Input:                      filename          duration   amount_sent  average_bandwidth
+      flow_info_edge_coloring     14000000000.0 43750000000.0              3.125
+               flow_info_ecmp 882415254.2372881 43750000000.0 63.771186440677965
+         flow_info_ilp_solver       437500000.0 43750000000.0              100.0
+flow_info_simulated_annealing 775820974.5762712 43750000000.0  68.46398305084746
+              flow_info_mcvlc       437500000.0 43750000000.0              100.0
+Output:                      filename          duration   amount_sent  average_bandwidth order
+      flow_info_edge_coloring     14000000000.0 43750000000.0              3.125   4.0
+               flow_info_ecmp 882415254.2372881 43750000000.0 63.771186440677965   3.0
+         flow_info_ilp_solver       437500000.0 43750000000.0              100.0   1.0
+flow_info_simulated_annealing 775820974.5762712 43750000000.0  68.46398305084746   3.0
+              flow_info_mcvlc       437500000.0 43750000000.0              100.0   2.0
+------------------------------
+Input:                      filename     duration  amount_sent average_bandwidth
+      flow_info_edge_coloring 2800000000.0 8750000000.0             3.125
+         flow_info_ilp_solver   87500000.0 8750000000.0             100.0
+               flow_info_ecmp  168350000.0 8750000000.0             67.04
+              flow_info_mcvlc   87500000.0 8750000000.0             100.0
+flow_info_simulated_annealing  146212500.0 8750000000.0 72.24666666666667
+Output:                      filename     duration  amount_sent average_bandwidth order
+      flow_info_edge_coloring 2800000000.0 8750000000.0             3.125   3.0
+         flow_info_ilp_solver   87500000.0 8750000000.0             100.0   1.0
+               flow_info_ecmp  168350000.0 8750000000.0             67.04   3.0
+              flow_info_mcvlc   87500000.0 8750000000.0             100.0   2.0
+flow_info_simulated_annealing  146212500.0 8750000000.0 72.24666666666667   3.0
+------------------------------
+Input:                      filename      duration  amount_sent average_bandwidth
+      flow_info_edge_coloring  2800000000.0 8750000000.0             3.125
+         flow_info_ilp_solver    87500000.0 8750000000.0             100.0
+               flow_info_ecmp   170800000.0 8750000000.0             66.74
+              flow_info_mcvlc    87500000.0 8750000000.0             100.0
+flow_info_simulated_annealing 156362500.003 8750000000.1 69.85848484853416
+Output:                      filename      duration  amount_sent average_bandwidth order
+      flow_info_edge_coloring  2800000000.0 8750000000.0             3.125   4.0
+         flow_info_ilp_solver    87500000.0 8750000000.0             100.0   1.0
+               flow_info_ecmp   170800000.0 8750000000.0             66.74   4.0
+              flow_info_mcvlc    87500000.0 8750000000.0             100.0   3.0
+flow_info_simulated_annealing 156362500.003 8750000000.1 69.85848484853416   2.0
+------------------------------
+Input:                      filename     duration  amount_sent average_bandwidth
+      flow_info_edge_coloring 2800000000.0 8750000000.0             3.125
+         flow_info_ilp_solver   87500000.0 8750000000.0             100.0
+               flow_info_ecmp  170450000.0 8750000000.0             66.84
+              flow_info_mcvlc   87500000.0 8750000000.0             100.0
+flow_info_simulated_annealing  157675000.0 8750000000.0 68.23333333333335
+Output:                      filename     duration  amount_sent average_bandwidth order
+      flow_info_edge_coloring 2800000000.0 8750000000.0             3.125   3.0
+         flow_info_ilp_solver   87500000.0 8750000000.0             100.0   1.0
+               flow_info_ecmp  170450000.0 8750000000.0             66.84   3.0
+              flow_info_mcvlc   87500000.0 8750000000.0             100.0   2.0
+flow_info_simulated_annealing  157675000.0 8750000000.0 68.23333333333335   3.0
+------------------------------
+Input:                      filename     duration  amount_sent average_bandwidth
+      flow_info_edge_coloring 2800000000.0 8750000000.0             3.125
+         flow_info_ilp_solver   87500000.0 8750000000.0             100.0
+               flow_info_ecmp  172550000.0 8750000000.0             66.12
+              flow_info_mcvlc   87500000.0 8750000000.0             100.0
+flow_info_simulated_annealing  161525000.0 8750000000.0             66.89
+Output:                      filename     duration  amount_sent average_bandwidth order
+      flow_info_edge_coloring 2800000000.0 8750000000.0             3.125   3.0
+         flow_info_ilp_solver   87500000.0 8750000000.0             100.0   1.0
+               flow_info_ecmp  172550000.0 8750000000.0             66.12   3.0
+              flow_info_mcvlc   87500000.0 8750000000.0             100.0   2.0
+flow_info_simulated_annealing  161525000.0 8750000000.0             66.89   3.0
+------------------------------

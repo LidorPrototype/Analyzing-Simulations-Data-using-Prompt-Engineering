@@ -1,0 +1,11 @@
+Mon Apr 22 04:51:54 PM IDT 2024
+
+SLURM_JOBID:		 627
+SLURM_JOB_NODELIST:	 HPC-RTX3070-01 
+
+
+Job lidorel_JOB_ID:627_NODE:HPC-RTX3070-01 Finished
+
+Dataset organized successfully! Check /home/lidorel/lora-tests/dataset_organized
+Total CSV files: 172712
+Total folders created: 35088

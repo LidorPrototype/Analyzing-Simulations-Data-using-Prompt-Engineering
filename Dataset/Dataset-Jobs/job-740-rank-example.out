@@ -1,0 +1,15 @@
+Sun Apr 28 04:34:45 PM IDT 2024
+
+SLURM_JOBID:		 740
+SLURM_JOB_NODELIST:	 HPC-RTX3070-01 
+
+
+Job lidorel_JOB_ID:740_NODE:HPC-RTX3070-01 Finished
+
+                        filename      start_time        duration       amount_sent  average_bandwidth  
+3           flow_info_ilp_solver 12102873062.680   586666667.000   58666666700.000            100.000  
+4                flow_info_mcvlc 12102873062.680   586666667.000   58666666700.000            100.000  
+1  flow_info_simulated_annealing 19525379729.844   917546667.176   58666666699.400             75.890  
+0                 flow_info_ecmp 22522073064.210  1146933333.830   58666666696.500             68.826  
+2        flow_info_edge_coloring 96442073073.480 15469226668.864   58666666675.000              4.225  
+
