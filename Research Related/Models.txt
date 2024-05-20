@@ -5,7 +5,7 @@ TTI			Falcon-7B-Instruct			7B		https://huggingface.co/tiiuae/falcon-7b-instruct
 Google Research 	T5					Multiple	https://huggingface.co/google-t5
 										https://huggingface.co/docs/transformers/en/model_doc/t5
 Cerebras Systems 	Cerebras-GPT-13B-Instruct		13B		https://huggingface.co/cerebras/Cerebras-GPT-13B
-Mistral AI_		mistral-7b, mistral-7B-QnA		7B		https://huggingface.co/mistralai
+Mistral AI_		mistral-7b, mistral-7B-QnA		7B		https://huggingface.co/mistralai ; https://www.promptingguide.ai/models/mistral-7b
 
 
 

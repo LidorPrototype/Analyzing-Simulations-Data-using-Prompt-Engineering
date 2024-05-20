@@ -1,3 +1,4 @@
+
 - https://www.datacamp.com/tutorial/how-to-train-a-llm-with-pytorch
 - https://www.youtube.com/watch?v=KEv-F5UkhxU
 - https://github.com/facebookresearch/llama
@@ -30,24 +31,24 @@
 - https://www.youtube.com/watch?v=iYr1xZn26R8
 - https://huggingface.co/docs/trl/en/sft_trainer
 - https://huggingface.co/docs/transformers/en/main_classes/trainer
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- https://www.promptingguide.ai/models/collection
+- https://huggingface.co/tiiuae/falcon-7b-instruct/discussions/1
+- https://ollama.com/library/falcon:7b-instruct
+- https://developers.cloudflare.com/workers-ai/models/falcon-7b-instruct/
+- https://www.superannotate.com/blog/llm-prompting-tricks
+- https://www.phdata.io/blog/how-to-craft-prompts-for-different-large-language-models-tasks/
+- https://medium.com/@tejpal.abhyuday/basics-of-prompt-engineering-efdc80d9b387
+- https://medium.com/the-modern-scientist/best-prompt-techniques-for-best-llm-responses-24d2ff4f6bca
+- https://medium.com/@jh.baek.sd/large-language-model-llm-prompt-engineering-101-a-must-read-for-developers-part-1-62b0e038ff69
+- https://python.plainenglish.io/instruct-fine-tuning-falcon-7b-using-lora-6f79c3f234b0
+- https://medium.com/@abirkhan4u/falcon-7b-instruct-llm-with-langchain-empowering-language-processing-like-never-before-b8abb0498bf
+- https://vilsonrodrigues.medium.com/run-your-private-llm-falcon-7b-instruct-with-less-than-6gb-of-gpu-using-4-bit-quantization-ff1d4ffbabcc
+- https://www.prompthub.us/blog/the-few-shot-prompting-guide#:~:text=Few%20shot%20prompting%20is%20a,a%20small%20amount%20of%20data.
+- https://www.promptingguide.ai/techniques/fewshot
+- https://neptune.ai/blog/zero-shot-and-few-shot-learning-with-llms
+- https://david9dragon9.medium.com/the-right-way-to-do-few-shot-prompting-a7f48fde6298
+- https://promptengineering.org/master-prompting-concepts-zero-shot-and-few-shot-prompting/
+- https://www.promptingguide.ai/techniques/rag
 - 
 - 
 - 
