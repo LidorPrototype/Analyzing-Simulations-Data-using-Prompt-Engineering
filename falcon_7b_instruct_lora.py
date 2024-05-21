@@ -12,7 +12,6 @@ import time
 import warnings
 warnings.filterwarnings("ignore")
 
-# token_key = "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"
 # login(token=token_key, add_to_git_credential = False, write_permission = True)
 
 # print("-- loging done")
