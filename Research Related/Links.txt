@@ -48,13 +48,15 @@
 - https://neptune.ai/blog/zero-shot-and-few-shot-learning-with-llms
 - https://david9dragon9.medium.com/the-right-way-to-do-few-shot-prompting-a7f48fde6298
 - https://promptengineering.org/master-prompting-concepts-zero-shot-and-few-shot-prompting/
+- https://medium.com/google-cloud/fine-tuning-gemma-with-lora-on-gcp-5d25dbab9e0e
+- https://medium.com/@samvardhan777/fine-tune-gemma-using-qlora-%EF%B8%8F-6b2f2e76dc55
 - https://www.promptingguide.ai/techniques/rag
-- 
-- 
-- 
-- 
-- 
-- 
+- https://huggingface.co/blog/gemma
+- https://huggingface.co/google/gemma-7b-it
+- https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct
+- https://huggingface.co/settings/tokens
+- https://ai.google.dev/gemma/docs/lora_tuning
+- https://llama.meta.com/docs/how-to-guides/fine-tuning/
 - 
 - 
 - 

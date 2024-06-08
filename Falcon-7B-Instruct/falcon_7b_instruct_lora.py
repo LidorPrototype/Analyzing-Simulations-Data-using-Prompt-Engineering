@@ -1,7 +1,7 @@
 print("Start...")
 print("This is an experiment of doing LoRA finetuning on the Falcon model")
 print()
-
+"".lower()
 import torch
 from datasets import load_dataset, load_from_disk
 from peft import LoraConfig, get_peft_model, PeftModel
