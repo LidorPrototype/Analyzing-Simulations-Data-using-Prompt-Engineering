@@ -12,6 +12,8 @@ python-dotenv = "*"
 pinecone-client = "*"
 transformers = "*"
 torch = "*"
+peft = "*"
+langchain-community = "*"
 
 [dev-packages]
 

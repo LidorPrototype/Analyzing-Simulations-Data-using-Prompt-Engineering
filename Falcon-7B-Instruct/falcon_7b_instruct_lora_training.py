@@ -1,14 +1,12 @@
 
-print("*************************************************************************************")
-print("*************************************************************************************")
+print("\n*************************************************************************************")
 print("**************************** Training Code Starting *********************************")
-print("*************************************************************************************")
 print("*************************************************************************************")
 
 import torch
 from datasets import load_from_disk
 from peft import LoraConfig, get_peft_model
-from transformers import (AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainingArguments)
+from transformers import (AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainingArguments, EvalPrediction)
 from trl import SFTTrainer
 import time
 import os
@@ -25,10 +23,12 @@ hf_model_name = "tiiuae/falcon-7b-instruct"
 dir_path = 'Tiiuae-falcon-7b-instruct'
 model_name_is = f"peft-training"
 output_dir = f'{dir_path}/{model_name_is}'
+logs_dir = f'{dir_path}/logs'
 model_final_path = f"{output_dir}/final_model/"
 EPOCHS = 3500
-LOGS = 700
+LOGS = 1
 SAVES = 700
+EVALS = EPOCHS / 100
 
 compute_dtype = getattr(torch, "float16")
 
@@ -36,7 +36,7 @@ bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_quant_type="nf4",
     bnb_4bit_compute_dtype=compute_dtype,
-    bnb_4bit_use_double_quant=True,
+    bnb_4bit_use_double_quant=False,
 )
 print("--------------------- BitsAndBytesConfig done ---------------------")
 
@@ -74,12 +74,15 @@ training_arguments = TrainingArguments(
     per_device_train_batch_size=1,
     gradient_accumulation_steps=4,
     optim='paged_adamw_32bit',
+    max_steps=EPOCHS,
     save_steps=SAVES,
-    fp16=True,
     logging_steps=LOGS,
+    logging_dir=logs_dir,
+    eval_steps=EVALS,
+    evaluation_strategy="steps",
+    fp16=True,
     learning_rate=0.001,
     max_grad_norm=0.3,
-    max_steps=EPOCHS,
     warmup_ratio=0.15, # 0.03
     lr_scheduler_type="constant",
     disable_tqdm=True,
@@ -87,21 +90,25 @@ training_arguments = TrainingArguments(
 print("--------------------- TrainingArguments done ---------------------")
 
 model.config.use_cache = False
-# dataset = load_dataset("timdettmers/openassistant-guanaco", split="train")
-dataset = load_from_disk("hf_processed_dataset")
-train_size = int(0.8 * len(dataset))
-test_dataset = dataset.select(range(train_size, len(dataset)))
+# dataset = load_from_disk("hf_processed_dataset_top5")
+dataset = load_from_disk("hf_processed_dataset_top1")
+train_size = int(0.85 * len(dataset))
+# eval_size = int(0.15 * len(dataset))
+# test_size = int(0.2 * len(dataset))
+eval_dataset = dataset.select(range(train_size, len(dataset)))
+# test_dataset = dataset.select(range(train_size, len(dataset)))
 train_dataset = dataset.select(range(train_size))
-test_dataset.save_to_disk("hf_test_dataset")
+# test_dataset.save_to_disk("hf_test_dataset_top5")
+# test_dataset.save_to_disk("hf_test_dataset_top1")
 print("--------------------- load datasets done --------------------")
 
 trainer = SFTTrainer(
     model=model,
     train_dataset=train_dataset,
-    eval_dataset=test_dataset,
+    eval_dataset=eval_dataset,
     peft_config=peft_config,
     dataset_text_field="text",
-    max_seq_length=512,
+    max_seq_length=448,
     tokenizer=tokenizer,
     args=training_arguments,
     packing=True,
@@ -116,7 +123,10 @@ print("------------------------------------------------------------")
 print("--------------------- Training Started ---------------------")
 print("------------------------------------------------------------")
 start = time.time()
-trainer.train()
+
+train_result = trainer.train()
+
+# Time
 end=time.time()
 time_taken=end-start
 seconds = int(time_taken)
@@ -128,15 +138,41 @@ print("---------------------- Training Done -----------------------")
 print(f"---------------- Training time: {hours:02d}:{minutes:02d}:{seconds:03d} ----------------")
 print("------------------------------------------------------------")
 
+# Time
+start = time.time()
+# compute train results
+metrics = train_result.metrics
+max_train_samples = len(train_dataset)
+metrics["train_samples"] = min(max_train_samples, len(train_dataset))
+# save train results
+trainer.log_metrics("train", metrics)
+trainer.save_metrics("train", metrics)
+# compute evaluation results
+metrics = trainer.evaluate()
+max_val_samples = len(eval_dataset)
+metrics["eval_samples"] = min(max_val_samples, len(eval_dataset))
+# save evaluation results
+trainer.log_metrics("eval", metrics)
+trainer.save_metrics("eval", metrics)
+
+end=time.time()
+time_taken=end-start
+seconds = int(time_taken)
+hours = seconds // 3600
+minutes = (seconds % 3600) // 60
+seconds = seconds % 60
+print("------------------------------------------------------------")
+print("---------------------- Training Done -----------------------")
+print(f"---------------- Training time: {hours:02d}:{minutes:02d}:{seconds:03d} ----------------")
+print("------------------------------------------------------------")
 
 print("------------------------------------------------------------")
 print("--------------------- Evaluating Model ---------------------")
 print("------------------------------------------------------------")
 results = trainer.evaluate()
 print(results)
-print()
 
-
+print("------------------------------------------------------------")
 model.save_pretrained(model_final_path) # better option for LangChain loader
 # trainer.save()
 # trainer.push_to_hub()

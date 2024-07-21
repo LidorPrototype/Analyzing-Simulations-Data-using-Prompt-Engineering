@@ -1,0 +1,7 @@
+!pip install -q datasets==2.16.0
+!pip install -q trl
+!pip install -q bitsandbytes
+!pip install -q git+https://github.com/huggingface/transformers
+!pip install -q peft
+!pip install -q --upgrade accelerate
+!pip install --upgrade torch torchvision

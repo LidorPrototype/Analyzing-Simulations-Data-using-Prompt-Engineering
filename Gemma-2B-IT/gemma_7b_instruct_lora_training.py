@@ -11,11 +11,13 @@ from trl import SFTTrainer
 from peft import LoraConfig
 import os, time
 import warnings
+# from accelerate import Accelerator # TESTING
 
 os.environ['WANDB_DISABLED'] = "true" # disable Weights and Biases
 warnings.filterwarnings("ignore")
 
-TTT = ""
+# accelerator = Accelerator() # TESTING
+TTT = "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"
 model_id = "google/gemma-2b-it"
 dir_path = 'Google-gemma-2b-it'
 model_name_is = f"peft-training"

@@ -1,0 +1,16 @@
+NOTEBOOK:
+srun --partition=rtx2080 --time=0-48:00:00 --job-name=interactive_notebook --gpus=1 --pty bash
+module load anaconda
+source activate env_lora_test
+jupyter-notebook --no-browser --port=8888 --ip=0.0.0.0
+
+
+IPYTHON:
+srun --partition=rtx2080 --time=0-48:00:00 --job-name=interactive_model --gpus=1 --pty bash
+module load anaconda
+source activate env_lora_test
+ipython
+import os;os.chdir('final-1')
+%run demonstration_config.py
+res = generate_from_prompt(prt = prompt)
+print(res)

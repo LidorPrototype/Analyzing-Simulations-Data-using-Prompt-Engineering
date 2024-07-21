@@ -81,10 +81,11 @@ def process_prompt(
             formated_prompt = format_prompt_template(
                 user_prompt=user_prompt, df=df, template=prompt_template
             )
-            generated_response = run_llm_azure(
+            st.toast(formated_prompt)
+            generated_response = run_llm( # run_llm_azure(
                 query=formated_prompt,
                 chat_history=st.session_state["chat_history"],
-                df=df,
+                # df=df,
             )
             formatted_response = f"{generated_response['answer']}"
             st.session_state["user_prompt_history"].append(user_prompt)
