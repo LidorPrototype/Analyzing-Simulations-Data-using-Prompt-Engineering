@@ -15,6 +15,8 @@ import pandas as pd
 from io import StringIO
 import warnings
 import time
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 from utilities import format_prompt_template, get_dfs, write_files_for_test
 
@@ -34,9 +36,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
 st.sidebar.title("Analyzing Simulations Data using Prompt Engineering")
-
 
 def display_chat():
     if (
@@ -72,69 +72,87 @@ def check_required(dfs: list = None, tmplt: str = None) -> bool:
     return val
 
 
-# """Chat Function - LLM"""
-def process_prompt(
-    user_prompt: str = None, df: pd.DataFrame = None, prompt_template: str = None
-):
-    if user_prompt and not df.empty and prompt_template:
-        with st.spinner("Generating response..."):
-            formated_prompt = format_prompt_template(
-                user_prompt=user_prompt, df=df, template=prompt_template
-            )
-            st.toast(formated_prompt)
-            generated_response = run_llm( # run_llm_azure(
-                query=formated_prompt,
-                chat_history=st.session_state["chat_history"],
-                # df=df,
-            )
-            formatted_response = f"{generated_response['answer']}"
-            st.session_state["user_prompt_history"].append(user_prompt)
-            st.session_state["chat_answers_history"].append(formatted_response)
-            st.session_state["chat_history"].append(
-                (user_prompt, generated_response["answer"], str(df))
-            )
-            display_chat()
-        write_files_for_test(
-            user_prompt,
-            prompt_template,
-            formated_prompt,
-            formatted_response,
-            st.session_state["chat_history"],
-        )
-
-
 def create_dataframe_st(df: pd.DataFrame):
     st.sidebar.dataframe(data=df)
-
-
-def create_line_chart_st(df: pd.DataFrame):
-    st.sidebar.line_chart(
-        df.assign(
-            **{
-                col: (df[col] - df[col].min()) / (df[col].max() - df[col].min())
-                for col in df.select_dtypes(include=["int64", "float64"])
-            }
-        )
-    )
-
-
-# TODO Fix / Change
-def create_heatmap_st(df):
-    import plotly.express as px
-
-    fig = px.heatmap(df)
-    st.plotly_chart(fig)
+def line_plot(ax, data):
+    data.plot(ax=ax)
+    ax.tick_params(axis='x', rotation=45)
+def bar_plot(ax, data):
+    data.plot(kind='bar', ax=ax)
+    ax.tick_params(axis='x', rotation=45)
+def histogram(ax, data):
+    numeric_cols = data.select_dtypes(include=['number']).columns
+    if not numeric_cols.empty:
+        data[numeric_cols].hist(ax=ax)
+    else:
+        st.sidebar.write("No numeric columns available for histogram.")
+def box_plot(ax, data):
+    numeric_cols = data.select_dtypes(include=['number']).columns
+    if not numeric_cols.empty:
+        data[numeric_cols].plot(kind='box', ax=ax)
+    else:
+        st.sidebar.write("No numeric columns available for box plot.")
+def scatter_plot(ax, data):
+    numeric_columns = data.select_dtypes(include=['float64', 'int64']).columns.tolist()
+    if len(numeric_columns) >= 2:
+        x_axis = st.sidebar.selectbox("Select X-axis", numeric_columns, index=0)
+        y_axis = st.sidebar.selectbox("Select Y-axis", numeric_columns, index=1)
+        data.plot(kind='scatter', x=x_axis, y=y_axis, ax=ax)
+    else:
+        st.sidebar.write("Scatter plot requires at least two numeric columns.")
+def heatmap(ax, data):
+    sns.heatmap(data.corr(), annot=True, cmap='coolwarm', ax=ax)
+def area_plot(ax, data):
+    data.plot(kind='area', ax=ax)
+def pair_plot(data):
+    pair_plot_figure = sns.pairplot(data)
+    st.sidebar.pyplot(pair_plot_figure.fig)
+def violin_plot(ax, data):
+    sns.violinplot(data=data, ax=ax)
+def swarm_plot(ax, data):
+    sns.swarmplot(data=data, ax=ax)
 
 
 def apply_visualizations(fdf: pd.DataFrame):
-    visualizations = ["Dataframe", "Line Chart", "Heatmap"]
+    visualizations = ["DataFrame", "Line Plot", "Bar Plot", "Histogram", "Box Plot", "Scatter Plot", "Heatmap", 
+                      "Area Plot", "Pair Plot", "Violin Plot", "Swarm Plot"]
     visualization_type = st.sidebar.selectbox("Choose Visualization:", visualizations)
+    plot_placeholder = st.sidebar.empty()
+    def display_plot(plot_func, data, is_pair: bool = False):
+        try:
+            df = data.copy()
+            for col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+            data = df.copy()
+        except: pass
+        if is_pair:
+            plot_func(data)
+        else:
+            fig, ax = plt.subplots()
+            plot_func(ax, data)
+            plot_placeholder.pyplot(fig)
     if visualization_type == visualizations[0]:
         create_dataframe_st(fdf)
     elif visualization_type == visualizations[1]:
-        create_line_chart_st(fdf)
+        display_plot(line_plot, fdf)
     elif visualization_type == visualizations[2]:
-        create_heatmap_st(fdf)
+        display_plot(bar_plot, fdf)
+    elif visualization_type == visualizations[3]:
+        display_plot(histogram, fdf)
+    elif visualization_type == visualizations[4]:
+        display_plot(box_plot, fdf)
+    elif visualization_type == visualizations[5]:
+        display_plot(scatter_plot, fdf)
+    elif visualization_type == visualizations[6]:
+        display_plot(heatmap, fdf)
+    elif visualization_type == visualizations[7]:
+        display_plot(area_plot, fdf)
+    elif visualization_type == visualizations[8]:
+        display_plot(pair_plot, fdf, is_pair=True)
+    elif visualization_type == visualizations[9]:
+        display_plot(violin_plot, fdf)
+    elif visualization_type == visualizations[10]:
+        display_plot(swarm_plot, fdf)
 
 
 def handle_chat_input_enable(
@@ -198,6 +216,38 @@ if (
     st.session_state["waiter1"] = True
     st.session_state["waiter2"] = False
 
+# """Chat Function - LLM"""
+def process_prompt(
+    user_prompt: str = None, df: pd.DataFrame = None, prompt_template: str = None
+):
+    if user_prompt and not df.empty and prompt_template:
+        with st.spinner("Generating response..."):
+            formated_prompt = format_prompt_template(
+                user_prompt=user_prompt, df=df, template=prompt_template
+            )
+            # generated_response = run_llm(
+            #     query=formated_prompt,
+            #     chat_history=st.session_state["chat_history"],
+            # )
+            generated_response = run_llm_azure(
+                query=formated_prompt,
+                chat_history=st.session_state["chat_history"],
+                df=df,
+            )
+            formatted_response = f"{generated_response['answer']}"
+            st.session_state["user_prompt_history"].append(user_prompt)
+            st.session_state["chat_answers_history"].append(formatted_response)
+            st.session_state["chat_history"].append(
+                (user_prompt, generated_response["answer"], str(df))
+            )
+        write_files_for_test(
+            user_prompt,
+            prompt_template,
+            formated_prompt,
+            formatted_response,
+            st.session_state["chat_history"],
+        )
+
 prompt = st.chat_input(disabled=st.session_state["waiter1"])
 
 chat_btn = st.sidebar.button("Start Chatting...", disabled=st.session_state["waiter2"], help=HELP_TEXTS["chat_btn"])
@@ -243,3 +293,4 @@ if chat_btn:
 
 if prompt:
     process_prompt(user_prompt=prompt, df=filtered_df, prompt_template=selected_prompt)
+    st.rerun()

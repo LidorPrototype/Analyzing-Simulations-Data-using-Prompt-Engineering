@@ -20,7 +20,7 @@ pc = Pinecone(
 
 
 def run_llm_azure(
-    query: str, chat_history: List[Tuple[str, Any]], df: pd.DataFrame = None
+    query: str, chat_history: List[Tuple[str, Any]], df: pd.DataFrame = None,
 ) -> Any:
     embeddings = AzureOpenAIEmbeddings(
         openai_api_key=os.environ.get("AZURE_OPENAI_API_KEY"),
