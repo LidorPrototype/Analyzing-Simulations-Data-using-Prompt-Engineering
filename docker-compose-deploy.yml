@@ -9,6 +9,13 @@ services:
       - model-data:/app/model
     env_file:
       - .env
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 2
+        delay: 10s
 
 volumes:
   model-data:
