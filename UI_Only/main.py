@@ -17,12 +17,14 @@ import warnings
 import time
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
-from utilities import format_prompt_template, get_dfs, write_files_for_test
+from utilities import get_dfs, write_files_for_test
 
 # streamlit run main.py
 
 warnings.filterwarnings("ignore")
+os.environ['HF_HOME'] = '/UI Only/hf_cache/'
 
 st.set_page_config(
     page_title="Final Project - Lidor E-S", page_icon="🤖", layout="wide"
@@ -222,28 +224,26 @@ def process_prompt(
 ):
     if user_prompt and not df.empty and prompt_template:
         with st.spinner("Generating response..."):
-            formated_prompt = format_prompt_template(
-                user_prompt=user_prompt, df=df, template=prompt_template
-            )
-            # generated_response = run_llm(
-            #     query=formated_prompt,
-            #     chat_history=st.session_state["chat_history"],
-            # )
-            generated_response = run_llm_azure(
-                query=formated_prompt,
+            generated_response = run_llm(
+            # generated_response = run_llm_azure(
+                user_prompt=user_prompt,
                 chat_history=st.session_state["chat_history"],
                 df=df,
+                prompt_template=prompt_template
             )
-            formatted_response = f"{generated_response['answer']}"
+            # display_prompt(generated_response)
+            # formatted_response = f"{generated_response['answer']}"
+            formatted_response = f"{generated_response['response']}"
             st.session_state["user_prompt_history"].append(user_prompt)
             st.session_state["chat_answers_history"].append(formatted_response)
             st.session_state["chat_history"].append(
-                (user_prompt, generated_response["answer"], str(df))
+                # (user_prompt, generated_response["answer"], str(df))
+                (user_prompt, generated_response["response"], str(df))
             )
         write_files_for_test(
             user_prompt,
             prompt_template,
-            formated_prompt,
+            "formated_prompt NOT SET",
             formatted_response,
             st.session_state["chat_history"],
         )
