@@ -8,3 +8,5 @@ transformers
 torch
 peft
 langchain-community
+matplotlib
+seaborn

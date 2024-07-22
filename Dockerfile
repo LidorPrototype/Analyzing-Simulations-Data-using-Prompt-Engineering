@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Copy the .env file to the container
-COPY .env /app/.env
+#COPY /UI_Only/.env /app/.env
 
 # Make port 8501 available to the world outside this container (Streamlit default port)
 EXPOSE 8501

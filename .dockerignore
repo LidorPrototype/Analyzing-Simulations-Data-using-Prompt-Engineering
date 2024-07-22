@@ -9,7 +9,7 @@ __pycache__
 *.tmp
 
 # Ignore configuration files
-.env
+# .env
 .secret
 
 # Ignore other specific files and directories
