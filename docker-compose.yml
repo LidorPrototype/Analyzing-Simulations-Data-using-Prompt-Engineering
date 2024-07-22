@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    image: analyzing-simulations:latest
+    ports:
+      - "8501:8501"
+    volumes:
+      - model-data:/app/model
+    env_file:
+      - .env
+
+volumes:
+  model-data:
+    external: true

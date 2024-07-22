@@ -1,0 +1,10 @@
+streamlit
+streamlit-chat
+langchain
+langchain-openai
+python-dotenv
+pinecone-client
+transformers
+torch
+peft
+langchain-community
