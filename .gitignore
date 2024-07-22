@@ -164,4 +164,8 @@ dataset-data/
 
 # Model
 Tiiuae-falcon-7b-instruct/
-# Tiiuae-falcon-7b-instruct/peft-training
+
+# Specific 
+bool_list_scores.json
+data_all.json
+trainer_state.json
