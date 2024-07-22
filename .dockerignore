@@ -1,0 +1,27 @@
+# Ignore directories
+venv
+build
+dist
+__pycache__
+
+# Ignore static files
+*.log
+*.tmp
+
+# Ignore configuration files
+.env
+.secret
+
+# Ignore other specific files and directories
+Dataset/
+Falcon-7B-Instruct/
+Gemma-2B-IT/
+ModelGraphs/
+Research Related/
+README.md
+TODO.xlsm
+TrainingResearchLog.xlsm
+Dockerfile
+.dockerignore
+.git
+.gitignore
