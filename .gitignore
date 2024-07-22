@@ -161,3 +161,7 @@ cython_debug/
 
 # Dataset related
 dataset-data/
+
+# Model
+Tiiuae-falcon-7b-instruct/
+# Tiiuae-falcon-7b-instruct/peft-training

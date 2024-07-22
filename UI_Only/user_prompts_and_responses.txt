@@ -1,0 +1,26 @@
+<>User Prompt:
+Thank you very much
+
+<>Prompt Template:
+Below is an instruction that describes a task, paired with a context that provides further context. Write a response that appropriately completes the request.
+
+## Instruction:
+{user_input}
+
+## Context:
+The data you have is the DataFrame added below, each row represents a different file data in it.
+{data}
+
+## Response:
+
+<>Formatted Prompt:
+formated_prompt NOT SET
+
+<>Formatted Response:
+Based on the given context, it seems like you are thanking someone for providing a DataFrame. The DataFrame contains information about different files, such as their start time, duration, amount sent, and average bandwidth. The data is organized in rows, with each row representing a different file.
+
+
+<>History:
+('What is the file name of the best simulation output file? from the dataframe provided (the indices are the filenames) and explain why with 2 sentences.', 'The file name of the best simulation output file is "flow_info_edge_coloring.csv". This is because it has the longest duration, indicating that it was the simulation with the most data collected.', '                                   start_time    duration    amount_sent average_bandwidth\nfilename                                                                                  \nflow_info_ecmp.csv                 6707615620   586666667  58666666700.0             100.0\nflow_info_edge_coloring.csv        6707615620  9386666668  58666666675.0              6.25\nflow_info_ilp_solver.csv           6707615620   586666667  58666666700.0             100.0\nflow_info_mcvlc.csv                6707615620   586666667  58666666700.0             100.0\nflow_info_simulated_annealing.csv  6707615620   586666667  58666666700.0             100.0')
+("What was it's duration?", 'The duration of the task is 586666667 seconds.', '                                   start_time    duration    amount_sent average_bandwidth\nfilename                                                                                  \nflow_info_ecmp.csv                 6707615620   586666667  58666666700.0             100.0\nflow_info_edge_coloring.csv        6707615620  9386666668  58666666675.0              6.25\nflow_info_ilp_solver.csv           6707615620   586666667  58666666700.0             100.0\nflow_info_mcvlc.csv                6707615620   586666667  58666666700.0             100.0\nflow_info_simulated_annealing.csv  6707615620   586666667  58666666700.0             100.0')
+('Thank you very much', 'Based on the given context, it seems like you are thanking someone for providing a DataFrame. The DataFrame contains information about different files, such as their start time, duration, amount sent, and average bandwidth. The data is organized in rows, with each row representing a different file.', '                                   start_time    duration    amount_sent average_bandwidth\nfilename                                                                                  \nflow_info_ecmp.csv                 6707615620   586666667  58666666700.0             100.0\nflow_info_edge_coloring.csv        6707615620  9386666668  58666666675.0              6.25\nflow_info_ilp_solver.csv           6707615620   586666667  58666666700.0             100.0\nflow_info_mcvlc.csv                6707615620   586666667  58666666700.0             100.0\nflow_info_simulated_annealing.csv  6707615620   586666667  58666666700.0             100.0')
