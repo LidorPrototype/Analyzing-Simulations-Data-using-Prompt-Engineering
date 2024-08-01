@@ -162,8 +162,8 @@ cython_debug/
 # Dataset related
 dataset-data/
 
-# Model
-Tiiuae-falcon-7b-instruct/
+# Model checkpoints
+checkpoint-*
 
 # Specific 
 bool_list_scores.json
