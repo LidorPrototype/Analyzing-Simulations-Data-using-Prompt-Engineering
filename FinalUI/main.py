@@ -1,4 +1,4 @@
-from backend.core import run_llm, run_llm_azure
+from backend.core import run_llm
 from constants import (
     HELP_TEXTS,
     FIRST_QUESTION,
@@ -225,7 +225,6 @@ def process_prompt(
     if user_prompt and not df.empty and prompt_template:
         with st.spinner("Generating response..."):
             generated_response = run_llm(
-            # generated_response = run_llm_azure(
                 user_prompt=user_prompt,
                 chat_history=st.session_state["chat_history"],
                 df=df,

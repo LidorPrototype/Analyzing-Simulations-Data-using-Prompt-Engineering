@@ -1,0 +1,25 @@
+<>User Prompt:
+Can you explain more about it?
+
+<>Prompt Template:
+Below is an instruction that describes a task, paired with a context that provides further context. Write a response that appropriately completes the request.
+
+## Instruction:
+{user_input}
+
+## Context:
+The data you have is the DataFrame added below, each row represents a different file data in it.
+{data}
+
+## Response:
+
+<>Formatted Prompt:
+formated_prompt NOT SET
+
+<>Formatted Response:
+Based on the given context, the DataFrame provided contains information about different files. Each row represents a file and includes the following columns: duration, amount_sent, and average_bandwidth. The "duration" column represents the duration of each file in seconds. The "amount_sent" column represents the amount of data sent by each file in bytes. The "average_bandwidth" column represents the average bandwidth used by each file in Mbps.
+
+
+<>History:
+('What is the file name of the best simulation output file? from the dataframe provided (the indices are the filenames) and explain why with 2 sentences.', 'The file name of the best simulation output file is "flow_info_edge_coloring.csv". This is because it has the highest duration and amount_sent values compared to the other files in the DataFrame.', '                                     duration    amount_sent average_bandwidth\nfilename                                                                      \nflow_info_ecmp.csv                  586666667  58666666700.0             100.0\nflow_info_edge_coloring.csv        9386666668  58666666675.0              6.25\nflow_info_ilp_solver.csv            586666667  58666666700.0             100.0\nflow_info_mcvlc.csv                 586666667  58666666700.0             100.0\nflow_info_simulated_annealing.csv   586666667  58666666700.0             100.0')
+('Can you explain more about it?', 'Based on the given context, the DataFrame provided contains information about different files. Each row represents a file and includes the following columns: duration, amount_sent, and average_bandwidth. The "duration" column represents the duration of each file in seconds. The "amount_sent" column represents the amount of data sent by each file in bytes. The "average_bandwidth" column represents the average bandwidth used by each file in Mbps.', '                                     duration    amount_sent average_bandwidth\nfilename                                                                      \nflow_info_ecmp.csv                  586666667  58666666700.0             100.0\nflow_info_edge_coloring.csv        9386666668  58666666675.0              6.25\nflow_info_ilp_solver.csv            586666667  58666666700.0             100.0\nflow_info_mcvlc.csv                 586666667  58666666700.0             100.0\nflow_info_simulated_annealing.csv   586666667  58666666700.0             100.0')
