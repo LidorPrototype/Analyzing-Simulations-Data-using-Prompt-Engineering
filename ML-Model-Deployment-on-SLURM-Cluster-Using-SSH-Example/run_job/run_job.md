@@ -19,9 +19,9 @@ This script demonstrates how to submit a job to a SLURM cluster using SSH. It pr
 
 1. **Install the `paramiko` library**:
 
-   \`\`\`bash
+   ```
    pip install paramiko
-   \`\`\`
+   ```
 
 ## Configuration
 
@@ -32,21 +32,21 @@ Update the following parameters in the script to match your setup:
 - \`SCRIPT_PATH\`: The path to the SLURM script on the remote server.
 - \`ARGUMENT\`: The argument to pass to the SLURM script.
 
-\`\`\`python
+```python
 # Define parameters here for easy editing
 USER = "your_username"   # Username for SSH connection
 SERVER_IP = "your_server_ip"  # IP address of the HPC cluster master node
 SCRIPT_PATH = "/path/to/your/slurm_script" # Path to the SLURM script on the remote server
 ARGUMENT = "your_argument" # Argument to pass to the SLURM script
-\`\`\`
+```
 
 ## Usage
 
 1. **Run the script**:
 
-   \`\`\`bash
+   ```
    python run_job.py
-   \`\`\`
+   ```
 
 2. **Enter your SSH password** when prompted.
 
@@ -58,18 +58,18 @@ If your username is \`john_doe\`, your server IP is \`192.168.1.100\`, your SLUR
 
 1. Update the script parameters:
 
-   \`\`\`python
+   ```python
    USER = "john_doe"
    SERVER_IP = "192.168.1.100"
    SCRIPT_PATH = "/home/john_doe/slurm_scripts"
    ARGUMENT = "test_argument"
-   \`\`\`
+   ```
 
 2. Run the script:
 
-   \`\`\`bash
+   ```bash
    python run_job.py
-   \`\`\`
+   ```
 
 3. Enter your SSH password when prompted.
 
