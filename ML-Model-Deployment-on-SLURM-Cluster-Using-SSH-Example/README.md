@@ -7,16 +7,19 @@ This project provides an example of deploying a machine learning model on a SLUR
 
 ```
 ML-Model-Deployment-on-SLURM-Cluster-Using-SSH-Example/
-│
 ├── main.py
 ├── run_main.sbatch
-├── run_job.sh
+├── run_job/
+│   ├── run_job.sh
+│   ├── run_job.py
+│   └── run_job.md
 └── README.md
 ```
 
 - **main.py**: A Python script that serves as a placeholder for your ML model. It takes a string argument and converts it to uppercase.
 - **run_main.sbatch**: A SLURM job script for submitting the job to the cluster.
-- **run_job.sh**: A Bash script to automate the SSH connection, job submission, and result retrieval.
+- **run_job/run_job.sh**: A Bash script to automate the SSH connection, job submission, and result retrieval.
+- **run_job/run_job.py**: A Python script that demonstrates how to submit a job to a SLURM cluster using SSH.
 - **README.md**: This file.
 
 ## Prerequisites
@@ -36,7 +39,7 @@ ML-Model-Deployment-on-SLURM-Cluster-Using-SSH-Example/
 2. **Update the SLURM Script (`run_main.sbatch`)**:
    - Replace `your_email@domain.com` with your actual email to receive job status notifications.
 
-3. **Configure SSH Script (`run_job.sh`)**:
+3. **Configure SSH Script (`run_job.sh`) or (`run_job.py`)**:
    - Update the `USER`, `SERVER_IP`, and `SCRIPT_PATH` variables with your server details and script path.
 
 4. **Copy Files to SLURM Cluster**:
@@ -56,6 +59,8 @@ ML-Model-Deployment-on-SLURM-Cluster-Using-SSH-Example/
    chmod +x run_job.sh
    ./run_job.sh
    ```
+   or
+   ```python run_job.py```
 
 6. **Check Output**:
    - The output will be displayed in the terminal, showing the converted uppercase string.
